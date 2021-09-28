@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export default function index() {
-  return (
-    <div>
-      Home
-    </div>
-  )
+  return <div>Home</div>;
 }
