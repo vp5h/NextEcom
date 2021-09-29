@@ -16,7 +16,7 @@ const Signin = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
+           
           />
           <small id="emailHelp" className="form-text text-muted">
             well never share your email with anyone else.
@@ -28,7 +28,7 @@ const Signin = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
+            
           />
         </div>
 
@@ -36,7 +36,7 @@ const Signin = () => {
           Login
         </button>
         <p className="my-2">
-          You dont have an Account?<Link  href='/register'><a style={{color: "blue"}}>  Register Here!</a></Link>
+          You dont have an Account?<Link  href='/Register'><a style={{color: "blue"}}>  Register Here!</a></Link>
         </p>
       </form>
     </>
