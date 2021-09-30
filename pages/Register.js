@@ -1,32 +1,47 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/dist/client/link';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import valid from '../utils/valid';
+import { DataContext } from '../store/GlobalState';
+import { postData } from '../utils/fetchdata';
 
 const Register = () => {
-    const intialState = {name: "", email: "", password: "", cf_password:""}
-    const [userData, setUserData] = useState(intialState)
-    const {name, email, password, cf_password} = userData
+  const intialState = { name: '', email: '', password: '', cf_password: '' };
+  const [userData, setUserData] = useState(intialState);
+  const { name, email, password, cf_password } = userData;
 
-    const hadleChangeInput= e=>{
-        const {name, value} = e.target
-        setUserData({...userData, [name]:value })
-    }
+  const [state, dispatch] = useContext(DataContext);
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        console.log(userData)
-    }
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+    dispatch({ type: 'NOTIFY', payload: {} });
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userData);
+    const errMsg = valid(name, email, password, cf_password);
+    if (errMsg) return dispatch({ type: 'NOTIFY', payload: { error: errMsg } });
+
+    dispatch({ type: 'NOTIFY', payload: { loading: true } });
+
+    const res = postData('auth/Register', userData);
+    console.log(res);
+  };
 
   return (
     <>
       <Head>
         <title>Register | Next Ecom</title>
       </Head>
-      <form className="mx-auto my-4" style={{ maxWidth: '500px' }} onSubmit={handleSubmit}>
-
-      <div className="form-group">
+      <form
+        className="mx-auto my-4"
+        style={{ maxWidth: '500px' }}
+        onSubmit={handleSubmit}
+      >
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -34,11 +49,9 @@ const Register = () => {
             id="name"
             name="name"
             value={name}
-            onChange={hadleChangeInput}
+            onChange={handleChangeInput}
           />
         </div>
-
-
 
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -49,7 +62,7 @@ const Register = () => {
             aria-describedby="emailHelp"
             name="email"
             value={email}
-            onChange={hadleChangeInput}
+            onChange={handleChangeInput}
           />
           <small id="emailHelp" className="form-text text-muted">
             well never share your email with anyone else.
@@ -63,7 +76,7 @@ const Register = () => {
             id="exampleInputPassword1"
             name="password"
             value={password}
-            onChange={hadleChangeInput}
+            onChange={handleChangeInput}
           />
         </div>
         <div className="form-group">
@@ -74,7 +87,7 @@ const Register = () => {
             id="exampleInputPassword2"
             name="cf_password"
             value={cf_password}
-            onChange={hadleChangeInput}
+            onChange={handleChangeInput}
           />
         </div>
 
