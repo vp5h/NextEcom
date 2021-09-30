@@ -25,7 +25,7 @@ const register = async(req, res)=>{
 
         const newUser = new Users({name, email, password: passwordHash, cf_password})
 
-        console.log(newUser)
+        await newUser.save()
         res.json({msg: "Register Success!" })
     }catch(err){
 
