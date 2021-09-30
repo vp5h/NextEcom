@@ -19,7 +19,7 @@ const Register = () => {
     dispatch({ type: 'NOTIFY', payload: {} });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(userData);
     const errMsg = valid(name, email, password, cf_password);
@@ -27,7 +27,7 @@ const Register = () => {
 
     dispatch({ type: 'NOTIFY', payload: { loading: true } });
 
-    const res = postData('auth/Register', userData);
+    const res = await postData('auth/Register', userData);
     console.log(res);
   };
 
