@@ -22,7 +22,7 @@ const ProductItem = ({ product, handleCheck }) => {
           disabled={product.inStock === 0 ? true : false}
           onClick={() => dispatch(addToCart(product, cart))}
         >
-          Buy
+          Add to cart
         </button>
       </>
     );

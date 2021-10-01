@@ -9,7 +9,7 @@ import Cookie from 'js-cookie';
 export default function NavBar() {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
-  const { auth } = state;
+  const { auth, cart } = state;
 
   const isActive = (r) => {
     if (r === router.pathname) {
@@ -104,20 +104,28 @@ export default function NavBar() {
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav p-1">
-          <li className={'nav-item' + isActive('/')}>
-            <Link href="/">
-              <a className="nav-link">
-                Home <span className="sr-only">(current)</span>
-              </a>
-            </Link>
-          </li>
-          <li className={'nav-item' + isActive('/cart')}>
+          <li className="nav-item">
             <Link href="/cart">
-              <a className="nav-link">
+              <a className={'nav-link' + isActive('/cart')}>
                 <i
                   className="fas fa-shopping-cart position-relative"
                   aria-hidden="true"
-                ></i>
+                >
+                  <span
+                    className="position-absolute"
+                    style={{
+                      padding: '3px 6px',
+                      background: '#ed143dc2',
+                      borderRadius: '50%',
+                      top: '-10px',
+                      right: '-10px',
+                      color: 'white',
+                      fontSize: '14px',
+                    }}
+                  >
+                    {cart.length}
+                  </span>
+                </i>{' '}
                 Cart
               </a>
             </Link>

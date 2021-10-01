@@ -67,7 +67,7 @@ const DetailProduct = (props) => {
           className="btn btn-dark d-block my-3 px-5"
           onClick={() => dispatch(addToCart(product, cart))}
         >
-          Buy
+         Add to Cart
         </button>
       </div>
     </div>
