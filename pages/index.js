@@ -32,7 +32,7 @@ const Home = (props) => {
     </div>);
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps({query}) {
   // const page = query.page || 1
   // const category = query.category || 'all'
   // const sort = query.sort || ''

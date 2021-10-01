@@ -15,9 +15,12 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  object-fit: cover;
+  object-position: 0 30%;
+}
 
 /*-----Loading-------*/
-@import url("./loading.css");
-
+@import url('./loading.css');
 
 @import url('./product.css');
