@@ -1,17 +1,20 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/dist/client/link';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import valid from '../utils/valid';
 import { DataContext } from '../store/GlobalState';
 import { postData } from '../utils/fetchdata';
+import { useRouter } from 'next/router';
 
 const Register = () => {
   const intialState = { name: '', email: '', password: '', cf_password: '' };
   const [userData, setUserData] = useState(intialState);
   const { name, email, password, cf_password } = userData;
 
-  const [state, dispatch] = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
+  const { auth } = state;
+  const router = useRouter();
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -28,12 +31,15 @@ const Register = () => {
     dispatch({ type: 'NOTIFY', payload: { loading: true } });
 
     const res = await postData('auth/Register', userData);
-    if(res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
+    if (res.err)
+      return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
     console.log(res);
 
     return dispatch({ type: 'NOTIFY', payload: { success: res.msg } });
   };
-
+  useEffect(() => {
+    if (Object.keys(auth).length !== 0) router.push('/');
+  }, [auth]);
   return (
     <>
       <Head>
