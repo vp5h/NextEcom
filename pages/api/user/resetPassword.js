@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import connectDB from '../../../utils/connectDB';
-import Users from '../../../models/userModel';
+import Users from '../../../Models/userModel';
 import auth from '../../../middleware/auth';
 import bcrypt from 'bcrypt';
 

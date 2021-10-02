@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import connectDB from '../../../utils/connectDB'
-import Categories from '../../../models/categoriesModel'
-import Products from '../../../models/productModel'
+import Categories from '../../../Models/categoriesModel'
+import Products from '../../../Models/productModel'
 import auth from '../../../middleware/auth'
 
 connectDB()

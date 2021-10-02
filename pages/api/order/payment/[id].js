@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import connectDB from '../../../../utils/connectDB'
-import Orders from '../../../../models/orderModel'
+import Orders from '../../../../Models/orderModel'
 import auth from '../../../../middleware/auth'
 
 connectDB()
