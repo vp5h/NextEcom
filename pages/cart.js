@@ -158,7 +158,7 @@ const Cart = () => {
           Total: <span className="text-danger">${total}</span>
         </h3>
 
-        <Link href={auth.user ? '#!' : '/signin'}>
+        <Link href={auth.user ? '#!' : '/Signin'}>
           <a className="btn btn-dark my-2" onClick={handlePayment}>
             Proceed with payment
           </a>
