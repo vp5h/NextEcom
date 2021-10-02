@@ -90,7 +90,7 @@ const Cart = () => {
         if (res.err)
           return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
 
-        dispatch({ type: 'ADD_CART', payload: [] });
+        dispatch({ type: 'ADD_CART', payload: [], notify: {} });
 
         const newOrder = {
           ...res.newOrder,
@@ -155,7 +155,7 @@ const Cart = () => {
         </form>
 
         <h3>
-          Total: <span className="text-danger">₹{total}</span>
+          Total: <span className="text-danger">${total}</span>
         </h3>
 
         <Link href={auth.user ? '#!' : '/signin'}>

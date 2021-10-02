@@ -47,7 +47,7 @@ const DetailProduct = (props) => {
 
       <div className="col-md-6 mt-3">
         <h2 className="text-uppercase">{product.title}</h2>
-        <h5 className="text-danger">₹{product.price}</h5>
+        <h5 className="text-danger">${product.price}</h5>
 
         <div className="row mx-0 d-flex justify-content-between">
           {product.inStock > 0 ? (
@@ -67,7 +67,7 @@ const DetailProduct = (props) => {
           className="btn btn-dark d-block my-3 px-5"
           onClick={() => dispatch(addToCart(product, cart))}
         >
-         Add to Cart
+          Add to Cart
         </button>
       </div>
     </div>
@@ -76,7 +76,7 @@ const DetailProduct = (props) => {
 
 export async function getServerSideProps({ params: { id } }) {
   const res = await getData(`product/${id}`);
-//   console.log(res)
+  //   console.log(res)
   // server side rendering
   return {
     props: { product: res.product }, // will be passed to the page component as props

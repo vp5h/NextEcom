@@ -93,13 +93,19 @@ const Signin = () => {
           Login
         </button>
 
-        <p className="my-2">
+        <p className="my-2 d-flex justify-content-center">
           You dont have an account?{' '}
           <Link href="/Register">
             <a style={{ color: 'crimson' }}>Register Now</a>
           </Link>
         </p>
       </form>
+      <div className="mx-auto my-4 " style={{ maxWidth: '500px' }}>
+        <p className="d-flex justify-content-center my-2"> Creds</p>
+        <p className="d-flex justify-content-center my-2">admin@prv.com</p>
+        <p className="d-flex justify-content-center my-2">user@prv.com</p>
+        <p className="d-flex justify-content-center my-2">Pass: 123456</p>
+      </div>
     </>
   );
 };

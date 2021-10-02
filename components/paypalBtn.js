@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useContext } from 'react';
 import { patchData } from '../utils/fetchData';
 import { DataContext } from '../store/GlobalState';

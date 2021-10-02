@@ -20,7 +20,24 @@ img {
   object-position: 0 30%;
 }
 
+footer {
+  position: absolute;
+  align-content: center;
+  width: 74vw;
+  height: 30px;
+
+  background-color: white;
+}
+.fixed-bottom {
+  left: 15vw;
+  right: 12vw;
+}
+
 /*-----Loading-------*/
 @import url('./loading.css');
 
 @import url('./product.css');
+
+@import url('./profile.css');
+
+@import url('./products_manager.css');

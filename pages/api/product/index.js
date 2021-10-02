@@ -63,8 +63,8 @@ const getProducts = async (req, res) => {
       .sorting()
       .paginating();
 
-    // const products = await features.query
-    const products = await Products.find();
+    const products = await features.query;
+    // const products = await Products.find();
     res.json({
       status: 'success',
       result: products.length,

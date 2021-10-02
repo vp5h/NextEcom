@@ -103,7 +103,7 @@ const Register = () => {
         <button type="submit" className="btn btn-dark w-100">
           Register
         </button>
-        <p className="my-2">
+        <p className="my-2 d-flex justify-content-center">
           Already, Have An Account!
           <Link href="/Signin">
             <a style={{ color: 'blue' }}> Login Here!</a>

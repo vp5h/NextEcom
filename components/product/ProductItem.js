@@ -11,7 +11,7 @@ const ProductItem = ({ product, handleCheck }) => {
   const userLink = () => {
     return (
       <>
-        <Link href={`product/${product._id}`}>
+        <Link href={`/product/${product._id}`}>
           <a className="btn btn-info" style={{ marginRight: '5px', flex: 1 }}>
             View
           </a>
@@ -83,7 +83,7 @@ const ProductItem = ({ product, handleCheck }) => {
         </h5>
 
         <div className="row justify-content-between mx-0">
-          <h6 className="text-danger">₹{product.price}</h6>
+          <h6 className="text-danger">${product.price}</h6>
           {product.inStock > 0 ? (
             <h6 className="text-danger">In Stock: {product.inStock}</h6>
           ) : (
