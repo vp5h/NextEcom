@@ -133,6 +133,9 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
 
           {!order.paid && auth.user.role !== 'admin' && (
             <div className="p-4">
+                <p className="d-flex justify-content-center my-2"> Creds for pay</p>
+             <p className="d-flex justify-content-center my-2">sb-kibmg7985305@personal.example.com</p>
+                <p className="d-flex justify-content-center my-2">Pass: 12345678</p>
               <h2 className="mb-4 text-uppercase">Total: ${order.total}</h2>
               <PaypalBtn order={order} />
             </div>
