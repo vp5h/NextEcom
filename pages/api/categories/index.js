@@ -1,5 +1,6 @@
+/* eslint-disable import/no-anonymous-default-export */
 import connectDB from '../../../utils/connectDB';
-import Categories from '../../../models/categoriesModel';
+import Categories from '../../../Models/categoriesModel';
 import auth from '../../../middleware/auth';
 
 connectDB();
