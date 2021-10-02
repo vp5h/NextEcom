@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link';
 import { useState, useContext, useEffect } from 'react';
 import valid from '../utils/valid';
 import { DataContext } from '../store/GlobalState';
-import { postData } from '../utils/fetchData.js';
+import { postData } from '../utils/fetchdata';
 import { useRouter } from 'next/router';
 
 const Register = () => {

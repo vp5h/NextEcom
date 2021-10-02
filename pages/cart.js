@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { DataContext } from '../store/GlobalState';
 import CartItem from '../components/CartItem';
 import Link from 'next/link';
-import { getData, postData } from '../utils/fetchData.js';
+import { getData, postData } from '../utils/fetchdata';
 
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext);

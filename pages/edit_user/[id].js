@@ -4,7 +4,7 @@ import { DataContext } from '../../store/GlobalState';
 import { updateItem } from '../../store/Actions';
 
 import { useRouter } from 'next/router';
-import { patchData } from '../../utils/fetchData.js';
+import { patchData } from '../../utils/fetchdata'
 
 const EditUser = () => {
   const router = useRouter();
