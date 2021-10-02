@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import filterSearch from '../utils/filterSearch'
-import {getData} from '../utils/fetchData'
 import {useRouter} from 'next/router'
 
 const Filter = ({state}) => {
