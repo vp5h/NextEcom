@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { useContext, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { DataContext } from '../store/GlobalState';
 import CartItem from '../components/CartItem';
 import Link from 'next/link';
 import { getData, postData } from '../utils/fetchData.js';
-import { useRouter } from 'next/router';
 
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext);

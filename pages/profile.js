@@ -5,7 +5,7 @@ import { DataContext } from '../store/GlobalState';
 import Link from 'next/link';
 
 import valid from '../utils/valid';
-import { patchData } from '../utils/fetchData.js';
+import { patchData } from '../utils/fetchdata';
 
 import { imageUpload } from '../utils/imageUpload';
 

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useContext, useState } from 'react';
 import { DataContext } from '../store/GlobalState';
 import { updateItem } from '../store/Actions';
-import { postData, putData } from '../utils/fetchData.js';
+import { postData, putData } from '../utils/fetchdata';
 
 const Categories = () => {
   const [name, setName] = useState('');

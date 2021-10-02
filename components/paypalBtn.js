@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useRef, useContext } from 'react';
-import { patchData } from '../utils/fetchData.js';
+import { patchData } from '../utils/fetchdata';
 import { DataContext } from '../store/GlobalState';
 import { updateItem } from '../store/Actions';
 

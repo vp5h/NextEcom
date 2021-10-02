@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { DataContext } from '../store/GlobalState';
 import { deleteItem } from '../store/Actions';
-import { deleteData } from '../utils/fetchData.js';
+import { deleteData } from '../utils/fetchdata';
 import { useRouter } from 'next/router';
 
 const Modal = () => {
