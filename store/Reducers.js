@@ -17,11 +17,11 @@ const reducers = (state, action) => {
         ...state,
         cart: action.payload,
         notify: action.notify
-      };
-      case ACTIONS.ADD_CART_NOTIFY:
+      }; 
+      case ACTIONS.ADD_MODAL:
       return {
-        ...state,
-        cart: action.payload,
+          ...state,
+          modal: action.payload
       };
 
     default:
