@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/dist/client/link';
 import { useState, useContext, useEffect } from 'react';
 import { DataContext } from '../store/GlobalState';
-import { postData } from '../utils/fetchData';
+import { postData } from '../utils/fetchData.js';
 import Cookie from 'js-cookie';
 import { useRouter } from 'next/router';
 

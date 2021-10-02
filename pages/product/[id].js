@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import { useState, useContext } from 'react';
-import { getData } from '../../utils/fetchData';
+import { getData } from '../../utils/fetchData.js';
 import { DataContext } from '../../store/GlobalState';
 import { addToCart } from '../../store/Actions';
 
