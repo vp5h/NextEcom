@@ -34,7 +34,7 @@ export default function NavBar() {
           <a className="dropdown-item">Users</a>
         </Link>
         <Link href="/create">
-          <a className="dropdown-item">Products</a>
+          <a className="dropdown-item">Add Products</a>
         </Link>
         <Link href="/categories">
           <a className="dropdown-item">Categories</a>
@@ -143,20 +143,7 @@ export default function NavBar() {
             loggedRouter()
           )}
         </ul>
-        {/* <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form> */}
+        
       </div>
     </nav>
   );

@@ -8,7 +8,7 @@ import { DataContext } from '../store/GlobalState';
 import { postData } from '../utils/fetchdata';
 
 const Signin = () => {
-  const initialState = { email: '', password: '' };
+  let initialState = { email: 'user@prv.com', password: '123456' };
   const [userData, setUserData] = useState(initialState);
   const { email, password } = userData;
 
@@ -89,8 +89,15 @@ const Signin = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-dark w-100">
+        <button type="submit" className="btn btn-dark w-100 my-2">
           Login
+        </button>
+        <button
+          type="submit"
+          className="btn d-flex justify-content-center btn-dark w-100"
+          onClick={() => setUserData({ ...userData, email: 'admin@prv.com' })}
+        >
+          Login as Admin
         </button>
 
         <p className="my-2 d-flex justify-content-center">
@@ -100,12 +107,6 @@ const Signin = () => {
           </Link>
         </p>
       </form>
-      <div className="mx-auto my-4 " style={{ maxWidth: '500px' }}>
-        <p className="d-flex justify-content-center my-2"> Creds</p>
-        <p className="d-flex justify-content-center my-2">admin@prv.com</p>
-        <p className="d-flex justify-content-center my-2">user@prv.com</p>
-        <p className="d-flex justify-content-center my-2">Pass: 123456</p>
-      </div>
     </>
   );
 };

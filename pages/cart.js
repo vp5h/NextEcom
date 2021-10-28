@@ -104,7 +104,14 @@ const Cart = () => {
   };
 
   if (cart.length === 0)
-    return <h2 className="responsive w-100">Cart is Empty</h2>;
+    return (
+      <>
+        <h2 className="responsive w-100 text-center">Cart is Empty</h2>
+        <h3 className="responsive w-100 text-center py-4">
+          <Link href="/"> Add Items form Store</Link>
+        </h3>
+      </>
+    );
 
   return (
     <div className="row mx-auto">

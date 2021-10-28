@@ -62,7 +62,7 @@ const PaypalBtn = ({ order }) => {
                 payload: { success: res.msg },
               });
             });
-            // This function shows a transaction success message to your buyer.
+            // This function shows a transaction success message 
           });
         },
       })
