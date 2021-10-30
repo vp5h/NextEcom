@@ -16,7 +16,7 @@ class Mydocument extends Document {
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           <script
-            src={`https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL_CLIENT_ID}`}
+            src={`https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}`}
           ></script>
         </Head>
         <body>
