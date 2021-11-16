@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
   return (
     <div
-      className="container center "
+      className="container center d-flex justify-content-around"
       style={{ margin: 'auto', marginTop: '9vh' }}
     >
       <footer className=" footer text-center text-lg-start ">

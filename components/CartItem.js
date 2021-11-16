@@ -39,7 +39,7 @@ const CartItem = ({ item, dispatch, cart }) => {
           -{' '}
         </button>
 
-        <span className="px-3 text-light">{item.quantity}</span>
+        <span className="px-3 text-dark">{item.quantity}</span>
 
         <button
           className="btn btn-outline-secondary"
