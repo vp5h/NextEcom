@@ -4,7 +4,7 @@ import { patchData } from '../utils/fetchdata';
 import { updateItem } from '../store/Actions';
 
 const OrderDetail = ({ orderDetail, state, dispatch }) => {
-  const { auth, orders } = state;
+  const { auth, orders, dark } = state;
 
   const handleDelivered = (order) => {
     dispatch({ type: 'NOTIFY', payload: { loading: true } });
@@ -43,10 +43,10 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
           style={{ margin: '20px auto' }}
           className="row justify-content-around"
         >
-          <div className="text-uppercase my-3" style={{ maxWidth: '600px' }}>
+          <div className={!dark?"text-uppercase my-3":"text-uppercase my-3 text-white"} style={{ maxWidth: '600px' }}>
             <h2 className="text-break">Order {order._id}</h2>
 
-            <div className="mt-4 text-secondary">
+            <div className={!dark? "mt-4":"mt-4 text-white"}>
               <h3>Shipping</h3>
               <p>Name: {order.user.name}</p>
               <p>Email: {order.user.email}</p>
@@ -132,7 +132,7 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
           </div>
 
           {!order.paid && auth.user.role !== 'admin' && (
-            <div className="p-4">
+            <div className={!dark?"p-4":"p-4 text-light"}>
                 <p className="d-flex justify-content-center my-2"> Creds for pay</p>
              <p className="d-flex justify-content-center my-2">sb-kibmg7985305@personal.example.com</p>
                 <p className="d-flex justify-content-center my-2">Pass: 12345678</p>

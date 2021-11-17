@@ -13,6 +13,7 @@ export const DataProvider = ({ children }) => {
     orders: [],
     users: [],
     categories: [],
+    dark: false
   };
   const [state, dispatch] = useReducer(reducers, intialState);
   const { cart, auth } = state;

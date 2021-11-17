@@ -21,7 +21,7 @@ const ProductsManager = () => {
   const [images, setImages] = useState([]);
 
   const { state, dispatch } = useContext(DataContext);
-  const { categories, auth } = state;
+  const { categories, auth, dark } = state;
 
   const router = useRouter();
   const { id } = router.query;
@@ -145,7 +145,7 @@ const ProductsManager = () => {
       <Head>
         <title>Products Manager</title>
       </Head>
-      <form className="row" onSubmit={handleSubmit}>
+      <form className={!dark?"row":"row text-light"} onSubmit={handleSubmit}>
         <div className="col-md-6">
           <input
             type="text"
@@ -156,15 +156,15 @@ const ProductsManager = () => {
             onChange={handleChangeInput}
           />
 
-          <div className="row">
-            <div className="col-sm-6">
+          <div className="row ">
+            <div className="col-sm-6 ">
               <label htmlFor="price">Price</label>
               <input
                 type="number"
                 name="price"
                 value={price}
                 placeholder="Price"
-                className="d-block w-100 p-2"
+                className="d-block w-100 p-2 "
                 onChange={handleChangeInput}
               />
             </div>

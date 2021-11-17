@@ -10,7 +10,7 @@ const DetailProduct = (props) => {
   const [tab, setTab] = useState(0);
 
   const { state, dispatch } = useContext(DataContext);
-  const { cart } = state;
+  const { cart, dark } = state;
 
   const isActive = (index) => {
     if (tab === index) return ' active';
@@ -18,7 +18,7 @@ const DetailProduct = (props) => {
   };
 
   return (
-    <div className="row detail_page">
+    <div className={!dark ? "row detail_page" : " row detail_page text-light"}>
       <Head>
         <title>Detail Product</title>
       </Head>
@@ -56,15 +56,15 @@ const DetailProduct = (props) => {
             <h6 className="text-danger">Out Stock</h6>
           )}
 
-          <h6 className="text-danger">Sold: {product.sold}</h6>
         </div>
+          <h6 className="text-danger">Sold: {product.sold}</h6>
 
         <div className="my-2">{product.description}</div>
         <div className="my-2">{product.content}</div>
 
         <button
           type="button"
-          className="btn btn-dark d-block my-3 px-5"
+          className={!dark? "btn btn-dark d-block my-3 px-5" : "btn btn-light d-block my-3 px-5"}
           onClick={() => dispatch(addToCart(product, cart))}
         >
           Add to Cart

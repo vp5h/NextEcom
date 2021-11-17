@@ -16,28 +16,34 @@ const reducers = (state, action) => {
       return {
         ...state,
         cart: action.payload,
-        notify: action.notify
-      }; 
-      case ACTIONS.ADD_MODAL:
-      return {
-          ...state,
-          modal: action.payload
+        notify: action.notify,
       };
-      case ACTIONS.ADD_ORDERS:
-        return {
-            ...state,
-            orders: action.payload
-        };
+    case ACTIONS.ADD_MODAL:
+      return {
+        ...state,
+        modal: action.payload,
+      };
+    case ACTIONS.ADD_ORDERS:
+      return {
+        ...state,
+        orders: action.payload,
+      };
     case ACTIONS.ADD_USERS:
-        return {
-            ...state,
-            users: action.payload
-        };
+      return {
+        ...state,
+        users: action.payload,
+      };
     case ACTIONS.ADD_CATEGORIES:
-        return {
-            ...state,
-            categories: action.payload
-        };
+      return {
+        ...state,
+        categories: action.payload,
+      };
+    case ACTIONS.DARK: {
+      return {
+        ...state,
+        dark: action.payload,
+      };
+    }
 
     default:
       return state;

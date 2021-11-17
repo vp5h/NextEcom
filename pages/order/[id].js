@@ -7,7 +7,7 @@ import OrderDetail from '../../components/OrderDetail';
 
 const DetailOrder = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { orders, auth } = state;
+  const { orders, auth, dark} = state;
 
   const router = useRouter();
 
@@ -26,7 +26,7 @@ const DetailOrder = () => {
       </Head>
 
       <div>
-        <button className="btn btn-dark" onClick={() => router.back()}>
+        <button className={!dark?"btn btn-dark":"btn btn-light"} onClick={() => router.back()}>
           <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Go
           Back
         </button>

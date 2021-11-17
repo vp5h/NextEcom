@@ -20,7 +20,7 @@ const Profile = () => {
   const { avatar, name, password, cf_password } = data;
 
   const { state, dispatch } = useContext(DataContext);
-  const { auth, notify, orders } = state;
+  const { auth, notify, orders, dark } = state;
 
   useEffect(() => {
     if (auth.user) setData({ ...data, name: auth.user.name });
@@ -113,7 +113,13 @@ const Profile = () => {
         <title>Profile</title>
       </Head>
 
-      <section className="row text-secondary my-3">
+      <section
+        className={
+          !dark
+            ? 'row text-secondary my-3'
+            : 'row text-secondary my-3 text-light'
+        }
+      >
         <div className="col-md-4">
           <h3 className="text-center text-uppercase">
             {auth.user.role === 'user' ? 'User Profile' : 'Admin Profile'}
@@ -201,7 +207,7 @@ const Profile = () => {
               className="table-bordered table-hover w-100 text-uppercase"
               style={{ minWidth: '600px', cursor: 'pointer' }}
             >
-              <thead className="bg-light font-weight-bold">
+              <thead className=" font-weight-bold">
                 <tr>
                   <td className="p-2">id</td>
                   <td className="p-2">date</td>

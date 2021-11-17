@@ -8,7 +8,7 @@ import { getData, postData } from '../utils/fetchdata';
 
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { cart, auth, orders } = state;
+  const { cart, auth, orders, dark } = state;
 
   const [total, setTotal] = useState(0);
 
@@ -119,7 +119,7 @@ const Cart = () => {
         <title>Cart Page</title>
       </Head>
 
-      <div className="col-md-8 text-secondary table-responsive my-3">
+      <div className={!dark?"col-md-8  table-responsive my-3":"col-md-8  table-responsive my-3 text-light" }>
         <h2 className="text-uppercase">Shopping Cart</h2>
 
         <table className="table my-3">
@@ -130,13 +130,14 @@ const Cart = () => {
                 item={item}
                 dispatch={dispatch}
                 cart={cart}
+                dark={dark}
               />
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
+      <div className={!dark?"col-md-4 my-3 text-right text-uppercase":"col-md-4 my-3 text-right text-uppercase text-light"}>
         <form>
           <h2>Shipping</h2>
 
@@ -166,7 +167,7 @@ const Cart = () => {
         </h3>
 
         <Link href={auth.user ? '#!' : '/Signin'}>
-          <a className="btn btn-dark my-2" onClick={handlePayment}>
+          <a className={!dark?"btn btn-dark my-2":"btn btn-light my-2"} onClick={handlePayment}>
             Proceed with payment
           </a>
         </Link>

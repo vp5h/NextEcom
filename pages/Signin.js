@@ -13,7 +13,7 @@ const Signin = () => {
   const { email, password } = userData;
 
   const { state, dispatch } = useContext(DataContext);
-  const { auth } = state;
+  const { auth, dark } = state;
 
   const router = useRouter();
 
@@ -58,7 +58,7 @@ const Signin = () => {
         <title>Sign in | Next Ecom</title>
       </Head>
       <form
-        className="mx-auto my-4"
+        className={!dark ? 'mx-auto my-4' : 'mx-auto my-4 text-light'}
         style={{ maxWidth: '500px' }}
         onSubmit={handleSubmit}
       >
@@ -89,12 +89,12 @@ const Signin = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-dark w-100 my-2">
+        <button type="submit" className={!dark? "btn btn-dark w-100 my-2":"btn btn-light w-100 my-2" }>
           Login
         </button>
         <button
           type="submit"
-          className="btn d-flex justify-content-center btn-dark w-100"
+          className={!dark? "btn btn-dark w-100 my-2":"btn btn-light w-100 my-2" }
           onClick={() => setUserData({ ...userData, email: 'admin@prv.com' })}
         >
           Login as Admin

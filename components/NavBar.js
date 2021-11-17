@@ -1,15 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/role-supports-aria-props */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { DataContext } from '../store/GlobalState';
 import Cookie from 'js-cookie';
+import { set } from 'mongoose';
 
 export default function NavBar() {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
-  const { auth, cart } = state;
+  const { auth, cart, dark } = state;
+  const [darkmode, setDarkmode] = useState(dark);
 
   const isActive = (r) => {
     if (r === router.pathname) {
@@ -45,7 +47,7 @@ export default function NavBar() {
 
   const loggedRouter = () => {
     return (
-      <li className="nav-item dropdown">
+      <li className={"nav-item dropdown"}>
         <a
           className="nav-link dropdown-toggle"
           href="#"
@@ -83,7 +85,13 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      className={
+        !dark
+          ? 'navbar navbar-expand-lg navbar-light bg-light'
+          : 'navbar navbar-expand-lg navbar-dark bg-dark'
+      }
+    >
       <Link href="/">
         <a className="navbar-brand">Next Ecom</a>
       </Link>
@@ -98,11 +106,27 @@ export default function NavBar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-
       <div
         className="collapse navbar-collapse justify-content-end"
         id="navbarSupportedContent"
       >
+        <div className="custom-control custom-switch">
+          <input
+            type="checkbox"
+            className="custom-control-input"
+            id="customSwitch1"
+           
+            onChange={(e) => {
+              setDarkmode(!darkmode);
+              dispatch({ type: 'DARK', payload: darkmode });
+            
+            }}
+          />
+          <label
+            className="custom-control-label"
+            htmlFor="customSwitch1"
+          ></label>
+        </div>
         <ul className="navbar-nav p-1">
           <li className="nav-item">
             <Link href="/cart">
@@ -143,7 +167,6 @@ export default function NavBar() {
             loggedRouter()
           )}
         </ul>
-        
       </div>
     </nav>
   );

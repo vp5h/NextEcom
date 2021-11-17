@@ -1,9 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { decrease, increase } from '../store/Actions';
+import { DataContext } from '../store/GlobalState';
+import { useContext } from 'react';
 
-const CartItem = ({ item, dispatch, cart }) => {
+
+const CartItem = ({ item, dispatch, cart, dark }) => {
+
   return (
+    <div className={!dark?"":"text-white"}>
     <tr>
       <td style={{ width: '100px', overflow: 'hidden' }}>
         <img
@@ -15,7 +20,7 @@ const CartItem = ({ item, dispatch, cart }) => {
       </td>
 
       <td style={{ minWidth: '200px' }} className="w-50 align-middle">
-        <h5 className="text-capitalize text-secondary">
+        <h5 className="text-capitalize ">
           <Link href={`/product/${item._id}`}>
             <a>{item.title}</a>
           </Link>
@@ -39,7 +44,7 @@ const CartItem = ({ item, dispatch, cart }) => {
           -{' '}
         </button>
 
-        <span className="px-3 text-dark">{item.quantity}</span>
+        <span className="px-3">{item.quantity}</span>
 
         <button
           className="btn btn-outline-secondary"
@@ -77,6 +82,7 @@ const CartItem = ({ item, dispatch, cart }) => {
         ></i>
       </td>
     </tr>
+    </div>
   );
 };
 

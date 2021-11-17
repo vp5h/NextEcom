@@ -1,22 +1,32 @@
-import React from 'react';
+import { useContext } from 'react';
 import Link from 'next/dist/client/link';
 import {
   faGithub,
   faTwitter,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { DataContext } from '../store/GlobalState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Footer = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { dark } = state;
   return (
     <div
-      className="container center d-flex justify-content-around"
-      style={{ margin: 'auto', marginTop: '9vh' }}
+      className={
+        !dark
+          ? ' container center d-flex justify-content-around'
+          : ' container center d-flex justify-content-around bg-dark'
+      }
+      style={{ margin: 'auto', width: '100vw' }}
     >
-      <footer className=" footer text-center text-lg-start ">
-        <div className="text-center">
+     
+        <div
+          className={!dark ? 'text-center container' : ' text-center bg-dark text-light container'}
+        >
           Made by
           <Link href="https://vp5h.netlify.app/">
-            <a className="text-dark"> Pravesh</a>
+            <a> Pravesh</a>
           </Link>
           <div
             className="footer-header"
@@ -63,7 +73,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </footer>
+     
     </div>
   );
 };

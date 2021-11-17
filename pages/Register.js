@@ -13,7 +13,7 @@ const Register = () => {
   const { name, email, password, cf_password } = userData;
 
   const { state, dispatch } = useContext(DataContext);
-  const { auth } = state;
+  const { auth, dark } = state;
   const router = useRouter();
 
   const handleChangeInput = (e) => {
@@ -46,7 +46,7 @@ const Register = () => {
         <title>Register | Next Ecom</title>
       </Head>
       <form
-        className="mx-auto my-4"
+        className={!dark?"mx-auto my-4": "mx-auto my-4 text-light"}
         style={{ maxWidth: '500px' }}
         onSubmit={handleSubmit}
       >

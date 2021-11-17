@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Users = () => {
     const {state, dispatch} = useContext(DataContext)
-    const {users, auth, modal} = state
+    const {users, auth, modal, dark} = state
 
     if(!auth.user) return null;
     return(
@@ -15,7 +15,7 @@ const Users = () => {
                 <title>Users</title>
             </Head>
 
-            <table className="table w-100">
+            <table className={!dark? "table w-1000":"table w-100 text-white"}>
                 <thead>
                     <tr>
                         <th></th>

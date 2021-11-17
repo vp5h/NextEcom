@@ -6,7 +6,7 @@ import { addToCart } from '../../store/Actions';
 
 const ProductItem = ({ product, handleCheck }) => {
   const { state, dispatch } = useContext(DataContext);
-  const { cart, auth } = state;
+  const { cart, auth, dark } = state;
 
   const userLink = () => {
     return (
@@ -62,7 +62,7 @@ const ProductItem = ({ product, handleCheck }) => {
   };
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
+    <div className={!dark ? "card": "bg-dark text-light card"} style={{ width: '18rem' }}>
       {auth.user && auth.user.role === 'admin' && (
         <input
           type="checkbox"
