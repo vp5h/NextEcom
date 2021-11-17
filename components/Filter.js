@@ -29,7 +29,7 @@ const Filter = ({state}) => {
     return (
         <div className="input-group">
             <div className="input-group-prepend col-md-2 px-0 mt-2">
-                <select className="custom-select text-capitalize"
+                <select className="custom-select text-capitalize mx-1"
                 value={category} onChange={handleCategory}>
 
                     <option value="all">All Products</option>
@@ -47,8 +47,8 @@ const Filter = ({state}) => {
                 value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />
             </form>
 
-            <div className="input-group-prepend col-md-2 px-0 mt-2">
-                <select className="custom-select text-capitalize"
+            <div className="input-group-prepend col-md-2 px-0 mt-2 ">
+                <select className="custom-select text-capitalize mx-1"
                 value={sort} onChange={handleSort}>
 
                      <option value="-createdAt">Newest</option>

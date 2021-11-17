@@ -7,6 +7,7 @@ import ProductItem from '../components/product/ProductItem';
 import filterSearch from '../utils/filterSearch';
 import { useRouter } from 'next/router';
 import Filter from '../components/Filter';
+import Link from 'next/link';
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
@@ -69,29 +70,41 @@ const Home = (props) => {
       <Filter state={state} />
 
       {auth.user && auth.user.role === 'admin' && (
-        <div
-          className="delete_all btn btn-danger mt-2"
-          style={{ marginBottom: '-10px' }}
-        >
-          <input
-            type="checkbox"
-            checked={isCheck}
-            onChange={handleCheckALL}
-            style={{
-              width: '25px',
-              height: '25px',
-              transform: 'translateY(8px)',
-            }}
-          />
-
-          <button
-            className="btn btn-danger ml-2"
-            data-toggle="modal"
-            data-target="#exampleModal"
-            onClick={handleDeleteAll}
+        <div className=" products">
+          <div
+            className="delete_all btn btn-danger mt-2"
+            style={{ margin: '10px' }}
           >
-            DELETE ALL
-          </button>
+            <input
+              type="checkbox"
+              checked={isCheck}
+              onChange={handleCheckALL}
+              style={{
+                width: '25px',
+                height: '25px',
+                transform: 'translateY(8px)',
+              }}
+            />
+
+            <button
+              className="btn btn-danger ml-2"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              onClick={handleDeleteAll}
+            >
+              DELETE ALL
+            </button>
+          </div>
+          <Link href="/create" passHref>
+            <div className=" btn btn-success mt-2" style={{ margin: '10px' }}>
+              <button className="btn btn-success">Add Products</button>
+            </div>
+          </Link>
+          <Link href="/profile" passHref>
+            <div className="btn btn-info mt-2" style={{ margin: '10px' }}>
+              <button className="btn btn-info">Sales</button>
+            </div>
+          </Link>
         </div>
       )}
 
