@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/role-supports-aria-props */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { DataContext } from '../store/GlobalState';
@@ -20,6 +20,10 @@ export default function NavBar() {
       return '';
     }
   };
+
+  useEffect(() => {
+    dispatch({ type: 'DARK', payload: darkmode });
+  });
 
   const handleLogout = () => {
     Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' });
@@ -47,7 +51,7 @@ export default function NavBar() {
 
   const loggedRouter = () => {
     return (
-      <li className={"nav-item dropdown"}>
+      <li className={'nav-item dropdown'}>
         <a
           className="nav-link dropdown-toggle"
           href="#"
@@ -115,11 +119,9 @@ export default function NavBar() {
             type="checkbox"
             className="custom-control-input"
             id="customSwitch1"
-           
             onChange={(e) => {
               setDarkmode(!darkmode);
               dispatch({ type: 'DARK', payload: darkmode });
-            
             }}
           />
           <label
