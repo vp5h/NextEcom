@@ -145,7 +145,10 @@ const ProductsManager = () => {
       <Head>
         <title>Products Manager</title>
       </Head>
-      <form className={!dark?"row":"row text-light"} onSubmit={handleSubmit}>
+      <form
+        className={!dark ? 'row' : 'row text-light'}
+        onSubmit={handleSubmit}
+      >
         <div className="col-md-6">
           <input
             type="text"
@@ -246,6 +249,7 @@ const ProductsManager = () => {
             {images.map((img, index) => (
               <div key={index} className="file_img my-1">
                 <img
+                  style={{ objectFit: 'contain' }}
                   src={img.url ? img.url : URL.createObjectURL(img)}
                   alt=""
                   className="img-thumbnail rounded"

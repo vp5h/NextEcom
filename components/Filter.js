@@ -50,7 +50,7 @@ const Filter = ({ state }) => {
       <form autoComplete="off" className="mt-2 col-md-8 px-0">
         <input
           type="text"
-          className={!dark?"form-control":"form-control bg-dark text-white"}
+          className={!dark ? 'form-control' : 'form-control bg-dark text-white'}
           list="title_product"
           value={search.toLowerCase()}
           onChange={(e) => setSearch(e.target.value)}

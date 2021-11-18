@@ -106,10 +106,26 @@ const Cart = () => {
   if (cart.length === 0)
     return (
       <>
-        <h2 className="responsive w-100 text-center">Cart is Empty</h2>
-        <h3 className="responsive w-100 text-center py-4">
+      <div style={{marginTop: "20vh"}}>
+        <h2
+          className={
+            !dark
+              ? 'responsive w-100 text-center '
+              : 'responsive w-100 text-center text-light'
+          }
+        >
+          Cart is Empty
+        </h2>
+        <h3
+          className={
+            !dark
+              ? 'responsive w-100 text-center py-4'
+              : 'responsive w-100 text-center py-4 text-white'
+          }
+        >
           <Link href="/"> Add Items form Store</Link>
         </h3>
+        </div>
       </>
     );
 
@@ -119,7 +135,13 @@ const Cart = () => {
         <title>Cart Page</title>
       </Head>
 
-      <div className={!dark?"col-md-8  table-responsive my-3":"col-md-8  table-responsive my-3 text-light" }>
+      <div
+        className={
+          !dark
+            ? 'col-md-8  table-responsive my-3'
+            : 'col-md-8  table-responsive my-3 text-light'
+        }
+      >
         <h2 className="text-uppercase">Shopping Cart</h2>
 
         <table className="table my-3">
@@ -137,7 +159,13 @@ const Cart = () => {
         </table>
       </div>
 
-      <div className={!dark?"col-md-4 my-3 text-right text-uppercase":"col-md-4 my-3 text-right text-uppercase text-light"}>
+      <div
+        className={
+          !dark
+            ? 'col-md-4 my-3 text-right text-uppercase'
+            : 'col-md-4 my-3 text-right text-uppercase text-light'
+        }
+      >
         <form>
           <h2>Shipping</h2>
 
@@ -167,7 +195,10 @@ const Cart = () => {
         </h3>
 
         <Link href={auth.user ? '#!' : '/Signin'}>
-          <a className={!dark?"btn btn-dark my-2":"btn btn-light my-2"} onClick={handlePayment}>
+          <a
+            className={!dark ? 'btn btn-dark my-2' : 'btn btn-light my-2'}
+            onClick={handlePayment}
+          >
             Proceed with payment
           </a>
         </Link>

@@ -64,7 +64,7 @@ const Home = (props) => {
   return (
     <div className="home_page">
       <Head>
-        <title>View Products by category</title>
+        <title>Search | NextEcom</title>
       </Head>
 
       <Filter state={state} />

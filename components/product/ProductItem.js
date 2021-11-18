@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { DataContext } from '../../store/GlobalState';
 import { addToCart } from '../../store/Actions';
+import { useRouter } from 'next/router';
 
 const ProductItem = ({ product, handleCheck }) => {
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, dark } = state;
+  const router = useRouter();
 
   const userLink = () => {
     return (
@@ -63,7 +65,7 @@ const ProductItem = ({ product, handleCheck }) => {
 
   return (
     <div className={!dark ? "card": "bg-dark text-light card"} style={{ width: '18rem' }}>
-      {auth.user && auth.user.role === 'admin' && (
+      {auth.user && auth.user.role === 'admin' && router.pathname === "/search" && (
         <input
           type="checkbox"
           checked={product.checked}
@@ -73,7 +75,10 @@ const ProductItem = ({ product, handleCheck }) => {
         />
       )}
       <img
-        className="card-img-top"
+        className=" d-block mx-auto img-thumbnail rounded"
+     
+        style={{ height: '300px', objectFit: "contain" }}
+        
         src={product.images[0].url}
         alt={product.images[0].url}
       />

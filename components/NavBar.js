@@ -115,7 +115,7 @@ export default function NavBar() {
         id="navbarSupportedContent"
       >
         <div className="custom-control custom-switch">
-          <input
+          {/* <input
             type="checkbox"
             className="custom-control-input"
             id="customSwitch1"
@@ -126,9 +126,38 @@ export default function NavBar() {
           <label
             className="custom-control-label"
             htmlFor="customSwitch1"
-          ></label>
+          ></label> */}
+
+          {/* <i
+            className="fas fa-adjust position-relative"
+            style={!darkmode ? { color: 'Black' } : { color: 'white' }}
+            onClick={(e) => {
+              setDarkmode(!darkmode);
+            }}
+          ></i> */}
         </div>
         <ul className="navbar-nav p-1">
+        <li className="nav-item">
+        <i
+            className="fas fa-adjust position-relative mt-2 p-1"
+            style={!darkmode ? { color: 'Black' } : { color: 'white' }}
+            onClick={(e) => {
+              setDarkmode(!darkmode);
+            }}
+          ></i>
+          </li>
+
+          <li className="nav-item">
+          <Link href="/search">
+            <a className={'nav-link' + isActive('/search')}>
+              <i
+                className="fas fa-search position-relative"
+                style={!darkmode ? null: { color: 'white' }}
+              ></i>{' '}
+              Search
+            </a>
+            </Link>
+          </li>
           <li className="nav-item">
             <Link href="/cart">
               <a className={'nav-link' + isActive('/cart')}>

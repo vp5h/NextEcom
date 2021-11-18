@@ -27,8 +27,8 @@ const DetailProduct = (props) => {
         <img
           src={product.images[tab].url}
           alt={product.images[tab].url}
-          className="d-block img-thumbnail rounded mt-4 w-100"
-          style={{ height: '350px' }}
+          className="d-block mx-auto img-thumbnail rounded"
+          style={{ height: '350px', objectFit: "contain" }}
         />
 
         <div className="row mx-0" style={{ cursor: 'pointer' }}>
@@ -37,8 +37,8 @@ const DetailProduct = (props) => {
               key={index}
               src={img.url}
               alt={img.url}
-              className={`img-thumbnail rounded ${isActive(index)}`}
-              style={{ height: '80px', width: '20%' }}
+              className={`img-thumbnail rounded ${isActive(index)}` }
+              style={{ height: '80px', width: '20%' , objectFit: "contain"}}
               onClick={() => setTab(index)}
             />
           ))}
