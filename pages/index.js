@@ -199,7 +199,7 @@ const Home = (props) => {
             ))
           )}
         </div>
-        <Link href="/?category=615867ebb3e535df36d4c0aa" passHref>
+        <Link href="search/?category=615867ebb3e535df36d4c0aa" passHref>
           <button className="btn btn-outline-info d-block mx-auto mb-4">
             More Laptops
           </button>
@@ -227,7 +227,7 @@ const Home = (props) => {
             ))
           )}
         </div>
-        <Link href="/?category=615869cbb3e535df36d4c0e9" passHref>
+        <Link href="search/?category=615869cbb3e535df36d4c0e9" passHref>
           <button className="btn btn-outline-info d-block mx-auto mb-4">
             More Packages
           </button>
