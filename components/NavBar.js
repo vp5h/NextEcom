@@ -140,7 +140,7 @@ export default function NavBar() {
         <li className="nav-item">
         <i
             className="fas fa-adjust position-relative mt-2 p-1"
-            style={!darkmode ? { color: 'Black' } : { color: 'white' }}
+            style={!darkmode ? { color: "rgba(0,0,0,.5)"} : { color: 'rgba(255,255,255,.5)' }}
             onClick={(e) => {
               setDarkmode(!darkmode);
             }}
@@ -152,7 +152,7 @@ export default function NavBar() {
             <a className={'nav-link' + isActive('/search')}>
               <i
                 className="fas fa-search position-relative"
-                style={!darkmode ? null: { color: 'white' }}
+                style={!darkmode ? { color: "rgba(0,0,0,.5)"}: { color: 'rgba(255,255,255,.5)' }}
               ></i>{' '}
               Search
             </a>
