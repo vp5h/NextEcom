@@ -23,7 +23,7 @@ export default function NavBar() {
 
   useEffect(() => {
     dispatch({ type: 'DARK', payload: darkmode });
-  });
+  }, [darkmode]);
 
   const handleLogout = () => {
     Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' });
@@ -121,7 +121,6 @@ export default function NavBar() {
             id="customSwitch1"
             onChange={(e) => {
               setDarkmode(!darkmode);
-              dispatch({ type: 'DARK', payload: darkmode });
             }}
           />
           <label
