@@ -145,9 +145,11 @@ const Home = (props) => {
             ))
           )}
         </div>
+        <Link href="search/?category=619640b7af1fa2cf41587ecd" passHref>
         <button className="btn btn-outline-info d-block mx-auto mb-4">
           More Tablets
         </button>
+        </Link>
       </div>
 
       <div className="home_page  mt-5">
