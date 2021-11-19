@@ -61,32 +61,32 @@ const Home = (props) => {
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
-        <Link href="search/?category=615867ebb3e535df36d4c0aa" passHref>
-          <div className="carousel-item active">
-            <img
-              className="d-block w-100"
-              src="https://res.cloudinary.com/nextecom/image/upload/v1637252254/f7e20932added589_jg1kok.jpg"
-              alt="First slide"
-            />
-          </div>
+          <Link href="search/?category=615867ebb3e535df36d4c0aa" passHref>
+            <div className="carousel-item active">
+              <img
+                className="d-block w-100"
+                src="https://res.cloudinary.com/nextecom/image/upload/v1637252254/f7e20932added589_jg1kok.jpg"
+                alt="First slide"
+              />
+            </div>
           </Link>
           <Link href="search/?category=615867ebb3e535df36d4c0aa" passHref>
-          <div className="carousel-item">
-            <img
-              className="d-block w-100"
-              src="https://res.cloudinary.com/nextecom/image/upload/v1637252254/5cdd41aab95a9e92_ixxeyy.jpg"
-              alt="Second slide"
-            />
-          </div>
+            <div className="carousel-item">
+              <img
+                className="d-block w-100"
+                src="https://res.cloudinary.com/nextecom/image/upload/v1637252254/5cdd41aab95a9e92_ixxeyy.jpg"
+                alt="Second slide"
+              />
+            </div>
           </Link>
           <Link href="search/?category=619636d822a15ac3a9f023d9" passHref>
-          <div className="carousel-item">
-            <img
-              className="d-block w-100"
-              src="https://res.cloudinary.com/nextecom/image/upload/v1637252680/145b2651ad775bb7_o1pixa.jpg"
-              alt="Third slide"
-            />
-          </div>
+            <div className="carousel-item">
+              <img
+                className="d-block w-100"
+                src="https://res.cloudinary.com/nextecom/image/upload/v1637252680/145b2651ad775bb7_o1pixa.jpg"
+                alt="Third slide"
+              />
+            </div>
           </Link>
         </div>
         <a
@@ -116,14 +116,33 @@ const Home = (props) => {
       </div>
 
       <div className="home_page mt-5">
+        {auth.user && auth.user.role === 'admin' && (
+          <div className=" products">
+            <Link href="/create" passHref>
+            <div className="btn btn-danger mt-2" style={{ margin: '10px' }}>
+              <button className="btn btn-danger">Edit all products</button>
+            </div>
+            </Link>
+            <Link href="/create" passHref>
+              <div className=" btn btn-success mt-2" style={{ margin: '10px' }}>
+                <button className="btn btn-success">Add Products</button>
+              </div>
+            </Link>
+            <Link href="/profile" passHref>
+              <div className="btn btn-info mt-2" style={{ margin: '10px' }}>
+                <button className="btn btn-info">Sales</button>
+              </div>
+            </Link>
+          </div>
+        )}
+        {auth.user && auth.user.role === 'admin' ? null : (
+          <Link href="/search" passHref>
+            <button className="btn btn-outline-success d-block mx-auto mb-4">
+              View all products
+            </button>
+          </Link>
+        )}
 
-      
-      <Link href="/search" passHref>
-          <button className="btn btn-outline-success d-block mx-auto mb-4">
-          {auth.user && auth.user.role === 'admin' ?  "Edit All Products" : "View all products"}
-          </button>
-        </Link>
-        
         {/* <Filter state={state} /> */}
 
         <h4
@@ -146,9 +165,9 @@ const Home = (props) => {
           )}
         </div>
         <Link href="search/?category=619640b7af1fa2cf41587ecd" passHref>
-        <button className="btn btn-outline-info d-block mx-auto mb-4">
-          More Tablets
-        </button>
+          <button className="btn btn-outline-info d-block mx-auto mb-4">
+            More Tablets
+          </button>
         </Link>
       </div>
 
@@ -236,7 +255,9 @@ const Home = (props) => {
         </Link>
         <Link href="/search" passHref>
           <button className="btn btn-outline-success d-block mx-auto mb-4">
-          {auth.user && auth.user.role === 'admin' ?  "Edit All Products" : "View all products"}
+            {auth.user && auth.user.role === 'admin'
+              ? 'Edit All Products'
+              : 'View all products'}
           </button>
         </Link>
       </div>
