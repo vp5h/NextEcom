@@ -218,7 +218,7 @@ const Profile = () => {
               </thead>
 
               <tbody>
-                {orders.map((order) => (
+                {orders.slice(0).reverse().map((order) => (
                   <tr key={order._id}>
                     <td className="p-2">
                       <Link href={`/order/${order._id}`}>
