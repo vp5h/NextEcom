@@ -118,7 +118,7 @@ const Home = (props) => {
       <div className="home_page mt-5">
 
       
-      <Link href="/" passHref>
+      <Link href="/search" passHref>
           <button className="btn btn-outline-success d-block mx-auto mb-4">
           {auth.user && auth.user.role === 'admin' ?  "Edit All Products" : "View all products"}
           </button>
@@ -234,7 +234,7 @@ const Home = (props) => {
             More Packages
           </button>
         </Link>
-        <Link href="/" passHref>
+        <Link href="/search" passHref>
           <button className="btn btn-outline-success d-block mx-auto mb-4">
           {auth.user && auth.user.role === 'admin' ?  "Edit All Products" : "View all products"}
           </button>
