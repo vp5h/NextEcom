@@ -118,7 +118,7 @@ const Home = (props) => {
       <div className="home_page mt-5">
         {auth.user && auth.user.role === 'admin' && (
           <div className=" products">
-            <Link href="/create" passHref>
+            <Link href="/search" passHref>
             <div className="btn btn-danger mt-2" style={{ margin: '10px' }}>
               <button className="btn btn-danger">Edit all products</button>
             </div>
